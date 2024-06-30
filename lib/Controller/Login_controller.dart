@@ -20,6 +20,7 @@ class LoginController extends GetxController {
     await SkipLoginPage();
   }
 
+
   Future<void> login() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool(LoginKey, true);
