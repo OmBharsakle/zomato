@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:zomato/home/display_screen/display_page.dart';
 import '../Splash_Screen/splash_screen.dart';
+import '../cart_screen/cartpage.dart';
 import '../home/home_screen/homepage.dart';
+import '../paymentscreen/paymentpage.dart';
 
 class AppRoutes{
   static Map<String, Widget Function(BuildContext)> routes={
-    '/' : (context) => SplashScreen(),
+    '/' : (context) => const SplashScreen(),
     '/home':(context)=>const HomePage(),
-    '/view':(context)=>const DisplayPage()
+    '/view':(context)=>const DisplayPage(),
+    '/cart':(context)=>const CartPage(),
+    '/order':(context)=>const Order_Placed(),
   };
 }

@@ -2,7 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:zomato/utils/color.dart';
 import 'package:zomato/utils/globle_values.dart';
-
+import '../../cart_screen/cartpage.dart';
 import '../../utils/globle_product_list.dart';
 import '../../utils/randome_list.dart';
 import '../components/Containers.dart';
@@ -28,7 +28,7 @@ class _DisplayPageState extends State<DisplayPage> {
           icon: const Icon(Icons.navigate_before,size: 30,),
         ),
         actions: const [
-           Icon(Icons.search_sharp),
+          Icon(Icons.search_sharp),
           SizedBox(width: 10,),
           Icon(Icons.favorite_border),
           SizedBox(width: 10,),
@@ -67,7 +67,7 @@ class _DisplayPageState extends State<DisplayPage> {
                       height: 20,
                       width: 190,
                       decoration: BoxDecoration(
-                      color: Colors.black12,
+                        color: Colors.black12,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
@@ -103,11 +103,11 @@ class _DisplayPageState extends State<DisplayPage> {
                                   IconButton(onPressed: () {
                                     setState(() {
                                       if(indexType[indexs]!=indexs)
-                                        {
-                                          indexType[indexs]=indexs;
-                                        }
+                                      {
+                                        indexType[indexs]=indexs;
+                                      }
                                       else{
-                                          indexType[indexs]=typeListFill.length+10;
+                                        indexType[indexs]=typeListFill.length+10;
                                       }
                                     });
                                   }, icon: Icon((indexs!=indexType[indexs])?Icons.arrow_drop_down_outlined:Icons.arrow_drop_up))
@@ -115,11 +115,11 @@ class _DisplayPageState extends State<DisplayPage> {
                               ),
                               (indexs!=indexType[indexs])?
                               Column(
-                                  children: [
-                              ...List.generate(productListModelUseJoin!.foodListDetails.length, (index) {
-                                indexDescriptions= randomDurationAreaIndex.nextInt(descriptionsList.length);
-                                return (productListModelUseJoin!.foodListDetails[index].type.toString()==typeListFill[indexs].toString())?
-                                (productListModelUseJoin!.foodListDetails[index].productNo==productListModelUse!.foodListDetails[selectIndexDisplay].productNo)?SizedBox(
+                                children: [
+                                  ...List.generate(productListModelUseJoin!.foodListDetails.length, (index) {
+                                    indexDescriptions= randomDurationAreaIndex.nextInt(descriptionsList.length);
+                                    return (productListModelUseJoin!.foodListDetails[index].type.toString()==typeListFill[indexs].toString())?
+                                    (productListModelUseJoin!.foodListDetails[index].productNo==productListModelUse!.foodListDetails[selectIndexDisplay].productNo)?SizedBox(
                                       child: Container(
                                         // height: 20,
                                         // width: 20,
@@ -142,14 +142,14 @@ class _DisplayPageState extends State<DisplayPage> {
                                                             decoration: BoxDecoration(
                                                               borderRadius: BorderRadius.circular(8),
                                                               border: Border.all(color: Colors.green,width: 2.5),
-                                                            color: Colors.white,
+                                                              color: Colors.white,
                                                             ),
                                                             alignment: Alignment.center,
                                                             child: Container(
                                                               height: 8,
                                                               width: 8,
                                                               decoration: const BoxDecoration(
-                                                              color: Colors.green,
+                                                                color: Colors.green,
                                                                 shape: BoxShape.circle,
                                                               ),
                                                             ),
@@ -159,8 +159,8 @@ class _DisplayPageState extends State<DisplayPage> {
                                                             height: 20,
                                                             width: 50,
                                                             decoration: BoxDecoration(
-                                                            color: Colors.orange.shade700,
-                                                              borderRadius: BorderRadius.circular(5)
+                                                                color: Colors.orange.shade700,
+                                                                borderRadius: BorderRadius.circular(5)
                                                             ),
                                                             alignment: Alignment.center,
                                                             child: Text('Bestseller',style: TextStyle(color: Colors.white,fontFamily: fontLight,fontSize: 8),),
@@ -170,22 +170,22 @@ class _DisplayPageState extends State<DisplayPage> {
                                                       const SizedBox(height: 10,),
                                                       Container(
                                                         width: 200,
-                                                          // color: Colors.red,
-                                                          padding: const EdgeInsets.all(5),
-                                                          child: Column(
-                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                            children: [
-                                                              Text(productListModelUseJoin!.foodListDetails[index].productName!,style: TextStyle(color: Colors.black,fontFamily: fontLight,fontWeight: FontWeight.bold,fontSize: 15,height: 1),),
-                                                              const SizedBox(height: 10,),
-                                                              Text('${productListModelUseJoin!.foodListDetails[index].ratPeople!} ratings',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1),),
-                                                              const SizedBox(height: 10,),
-                                                              Text('₹${productListModelUseJoin!.foodListDetails[index].productPrice!}',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontWeight: FontWeight.w500,fontSize: 13,height: 1),),
-                                                              const SizedBox(height: 10,),
-                                                              Text('OFFER Cuppens Available',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1),),
-                                                              const SizedBox(height: 10,),
-                                                              Text(descriptionsList[indexDescriptions],overflow: TextOverflow.ellipsis,maxLines: 4,style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1,),),
-                                                            ],
-                                                          ),
+                                                        // color: Colors.red,
+                                                        padding: const EdgeInsets.all(5),
+                                                        child: Column(
+                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                          children: [
+                                                            Text(productListModelUseJoin!.foodListDetails[index].productName!,style: TextStyle(color: Colors.black,fontFamily: fontLight,fontWeight: FontWeight.bold,fontSize: 15,height: 1),),
+                                                            const SizedBox(height: 10,),
+                                                            Text('${productListModelUseJoin!.foodListDetails[index].ratPeople!} ratings',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1),),
+                                                            const SizedBox(height: 10,),
+                                                            Text('₹${productListModelUseJoin!.foodListDetails[index].productPrice!}',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontWeight: FontWeight.w500,fontSize: 13,height: 1),),
+                                                            const SizedBox(height: 10,),
+                                                            Text('OFFER Cuppens Available',style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1),),
+                                                            const SizedBox(height: 10,),
+                                                            Text(descriptionsList[indexDescriptions],overflow: TextOverflow.ellipsis,maxLines: 4,style: TextStyle(color: Colors.black,fontFamily: fontLight,fontSize: 11,height: 1,),),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -200,7 +200,7 @@ class _DisplayPageState extends State<DisplayPage> {
                                                               height: 150,
                                                               width: 150,
                                                               decoration: BoxDecoration(
-                                                              // color: Colors.red,
+                                                                // color: Colors.red,
                                                                 borderRadius: BorderRadius.circular(20),
                                                                 image: DecorationImage(
                                                                   image: AssetImage(productListModelUseJoin!.foodListDetails[index].image!),
@@ -221,6 +221,12 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                       productDetailsListJoin[index]['addProduct']=true;
                                                                       productDetailsListJoin[index]['addCart']=productListModelUseJoin!.foodListDetails[index].productPrice;
                                                                       emtyeProductList.add(productDetailsListJoin[index]);
+                                                                      total=0;
+                                                                      for(int i=0;i<emtyeProductList.length;i++)
+                                                                      {
+                                                                        int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                        total+=point;
+                                                                      }
                                                                       // print(emtyeProductList[0]['addProduct']);
                                                                       // productDetailsListJoin[index]['addProduct']=false;
                                                                       // print(emtyeProductList[0]['addProduct']);
@@ -230,10 +236,10 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                     height: 45,
                                                                     width: 90,
                                                                     decoration: BoxDecoration(
-                                                                    color: Colors.pink.shade50,
+                                                                      color: Colors.pink.shade50,
                                                                       borderRadius: BorderRadius.circular(10),
                                                                       border: Border.all(
-                                                                        color: Colors.pink
+                                                                          color: Colors.pink
                                                                       ),
                                                                     ),
                                                                     child: Padding(
@@ -248,17 +254,17 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                                   Icon(Icons.add,size: 15,color: Colors.pink,),
                                                                                 ],
                                                                               ),
-                                                                          Align(
-                                                                            alignment: Alignment.center,
-                                                                            child: Column(
-                                                                              children: [
-                                                                                const SizedBox(height: 5,),
-                                                                                Container(
-                                                                                  child: Text('ADD',style: TextStyle(color: Colors.pink,fontSize: 20,fontFamily: fontBold),),
+                                                                              Align(
+                                                                                alignment: Alignment.center,
+                                                                                child: Column(
+                                                                                  children: [
+                                                                                    const SizedBox(height: 5,),
+                                                                                    Container(
+                                                                                      child: Text('ADD',style: TextStyle(color: Colors.pink,fontSize: 20,fontFamily: fontBold),),
+                                                                                    ),
+                                                                                  ],
                                                                                 ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
+                                                                              ),
                                                                             ],
                                                                           ),
                                                                         ],
@@ -266,14 +272,14 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                     ),
                                                                   ),
                                                                 ):
-                                                            //     onTap: () {
-                                                            // setState(() {
-                                                            // productListModelUseJoin!.foodListDetails[index].quantity=1+productListModelUseJoin!.foodListDetails[index].quantity!.toInt();
-                                                            // productListModelUseJoin!.foodListDetails[index].addProduct=true;
-                                                            // productListModelUseJoin!.foodListDetails[index].addCart=productListModelUseJoin!.foodListDetails[index].productPrice;
-                                                            // emtyeProductList.add(productDetailsListJoin[index]);
-                                                            // });
-                                                            // },
+                                                                //     onTap: () {
+                                                                // setState(() {
+                                                                // productListModelUseJoin!.foodListDetails[index].quantity=1+productListModelUseJoin!.foodListDetails[index].quantity!.toInt();
+                                                                // productListModelUseJoin!.foodListDetails[index].addProduct=true;
+                                                                // productListModelUseJoin!.foodListDetails[index].addCart=productListModelUseJoin!.foodListDetails[index].productPrice;
+                                                                // emtyeProductList.add(productDetailsListJoin[index]);
+                                                                // });
+                                                                // },
                                                                 Container(// todo add product
                                                                   height: 45,
                                                                   width: 90,
@@ -292,51 +298,62 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                         Row(
                                                                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                                                                           children: [
-                                                                            GestureDetector(
+                                                                            InkWell(
                                                                               onTap: () {
                                                                                 setState(() {
 
                                                                                   productDetailsListJoin[index]['quantity']=productDetailsListJoin[index]['quantity']+1;
                                                                                   productDetailsListJoin[index]['addProduct']=true;
                                                                                   productDetailsListJoin[index]['addCart']=productDetailsListJoin[index]['addCart']+productDetailsListJoin[index]['productPrice'];
+                                                                                  total=0;
+                                                                                  for(int i=0;i<emtyeProductList.length;i++)
+                                                                                  {
+                                                                                    int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                                    total+=point;
+                                                                                  }
                                                                                   // productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()+1;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addProduct=true;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addCart=(productListModelUseJoin!.foodListDetails[index].addCart!+productListModelUseJoin!.foodListDetails[index].productPrice!.toInt());
                                                                                 });
                                                                               },
                                                                               child: Container(
-                                                                                child: const Icon(Icons.add,color: Colors.white,)
+                                                                                  child: const Icon(Icons.add,color: Colors.white,)
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              child: Text(productListModelUseJoin!.foodListDetails[index].quantity.toString(),style: const TextStyle(color: Colors.white,fontSize: 18,),),
+                                                                              child: Text(productDetailsListJoin[index]['quantity'].toString(),style: const TextStyle(color: Colors.white,fontSize: 18,),),
                                                                             ),
-                                                                            GestureDetector(
+                                                                            InkWell(
                                                                               onTap: () {
-                                                                                  if(productDetailsListJoin[index]['quantity']!=0)
-                                                                                    {
-                                                                                      productDetailsListJoin[index]['addCart']=(productListModelUseJoin!.foodListDetails[index].addCart!-productListModelUseJoin!.foodListDetails[index].productPrice!.toInt());
-                                                                                      productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()-1;
-                                                                                      // print(productListModelUseJoin!.foodListDetails[index].addCart);
-                                                                                    }
-                                                                                  if(productListModelUseJoin!.foodListDetails[index].quantity==0)
-                                                                                    {
-                                                                                      productListModelUseJoin!.foodListDetails[index].addProduct=false;
-                                                                                      for(int i=0;i<emtyeProductList.length;i++)
-                                                                                        {
-                                                                                          if(emtyeProductList[i]['addProduct']==false)
-                                                                                            {
-                                                                                              emtyeProductList.removeAt(i);
-                                                                                              print(emtyeProductList[i]['addProduct']);
-                                                                                            }
-                                                                                        }
-                                                                                    }
                                                                                 setState(() {
+                                                                                  if(productDetailsListJoin[index]['quantity']!=0)
+                                                                                  {
+                                                                                    productDetailsListJoin[index]['addCart']=productDetailsListJoin[index]['addCart']-productDetailsListJoin[index]['productPrice'];
+                                                                                    productDetailsListJoin[index]['quantity']=productDetailsListJoin[index]['quantity']-1;
+                                                                                    // print(productListModelUseJoin!.foodListDetails[index].addCart);
+                                                                                  }
+                                                                                  if(productDetailsListJoin[index]['quantity']==0)
+                                                                                  {
+                                                                                    productDetailsListJoin[index]['addProduct']=false;
+                                                                                    for(int i=0;i<emtyeProductList.length;i++)
+                                                                                    {
+                                                                                      if(emtyeProductList[i]['addProduct']==false)
+                                                                                      {
+                                                                                        emtyeProductList.removeAt(i);
+                                                                                        print(emtyeProductList[i]['addProduct']);
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                  total=0;
+                                                                                  for(int i=0;i<emtyeProductList.length;i++)
+                                                                                  {
+                                                                                    int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                                    total+=point;
+                                                                                  }
                                                                                 });
                                                                               },
                                                                               child: Container(
-                                                                                color: Colors.red,
-                                                                                  child: const Icon(Icons.remove,color: Colors.white,),
+                                                                                child: const Icon(Icons.remove,color: Colors.white,),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -373,8 +390,8 @@ class _DisplayPageState extends State<DisplayPage> {
                                         ),
                                       ),
                                     ):Container():Container();
-                              },),
-                                  ],
+                                  },),
+                                ],
                               ):Container(),
                             ],
                           ),
@@ -404,7 +421,7 @@ class _DisplayPageState extends State<DisplayPage> {
         color: colorZomatoAll,
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed('/');
+            Navigator.of(context).pushNamed('/cart');
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
