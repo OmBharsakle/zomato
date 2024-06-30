@@ -7,10 +7,10 @@ import '../../utils/globle_image.dart';
 import '../../utils/globle_model.dart';
 import '../../utils/globle_product_list.dart';
 import '../../utils/globle_values.dart';
-import '../../utils/image_list_globle.dart';
 import '../../utils/randome_list.dart';
 import '../components/Containers.dart';
 import '../components/funtions_use.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -547,6 +547,7 @@ class _HomePageState extends State<HomePage> {
                                           selectIndexDisplay=indexs;
                                         });
                                         Navigator.of(context).pushNamed('/view');
+
                                       },
                                       child: Column(
                                         children: [
