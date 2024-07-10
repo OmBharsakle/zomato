@@ -54,17 +54,28 @@ class _ExtraState extends State<Extra> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
+                      (user!=null)?Padding(
                         padding: const EdgeInsets.only(left: 10.0),
                         child: CircleAvatar(
                           radius: 40,
                           backgroundImage: NetworkImage(user!.photoURL!),
                         ),
+                      ):Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: CircleAvatar(
+                          radius: 40,
+                          backgroundColor: Colors.blue.shade50,
+                          child: Text(
+                            'O',
+                            style: TextStyle(
+                                color: Colors.blue, fontSize: 30),
+                          ),
+                        ),
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      Column(
+                      (user!=null)?Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -88,7 +99,31 @@ class _ExtraState extends State<Extra> {
                                 color: Colors.red, fontFamily: fontLight),
                           ),
                         ],
-                      )
+                      ):Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'OMG',
+                            style: TextStyle(
+                                fontFamily: fontBold,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 25),
+                          ),
+                          Text(
+                            'contact@omgcreation.in',
+                            style: TextStyle(
+                                fontFamily: fontLight,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            'View activity',
+                            style: TextStyle(
+                                color: Colors.red, fontFamily: fontLight),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                   Spacer(),
